@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LavaRapidoMVC" default="run" basedir=".">
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+    <property name="classes.dir" location="${build.dir}/classes"/>
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" encoding="UTF-8" includeantruntime="false" source="17" target="17"/>
+    </target>
+    <target name="run" depends="compile">
+        <java classname="br.com.lavarapido.Main" fork="true" classpath="${classes.dir}"/>
+    </target>
+</project>
